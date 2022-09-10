@@ -37,7 +37,7 @@ class Competitor:
         self.record = t.sum()
     
     def __lt__(self,other):
-        return self.average_velocity < other.average_velocity
+        return self.speed < other.speed
     
     def __gt__(self,other):
-        return self.average_velocity > other.average_velocity
+        return self.speed > other.speed

@@ -20,7 +20,7 @@ class Game:
         competitor_pool = {}
         animals = animals[symbol_level]
         for serial_num in range(len(animals)): 
-            speed = random.randint(18,22) if serial_num < 12 else random.randint(15,25)
+            speed = random.uniform(18,22) if serial_num < 12 else random.uniform(15,25)
             competitor = Competitor(symbol=animals[serial_num], speed=speed, coef=coef)
             competitor.set_snapshots(length=200, num=160)
             # 参赛选手在12生肖中的序列号
@@ -145,9 +145,8 @@ class Game:
                     rich.print('悄悄告诉你，外援水分很大')
                     extra_coins -= 300 
                     self.coins  -= 300
-                    foreigner_pool = self.foreigner_pool.copy()
-                    random.shuffle(foreigner_pool)
-                    tian_pool.insert(index + 1, foreigner_pool[0])
+                    foreigner = random.choice(self.foreigner_pool) # 随机分配外援
+                    tian_pool.insert(index + 1, foreigner)
                 elif need_foreigner.lower() == 'y':
                     rich.print('穷鬼 ！继续你的比赛吧')
         result = wins >= 3 

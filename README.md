@@ -10,3 +10,10 @@
 1. 下载**整个**Packages库
 2. 在根目录下打开Terminal终端
 3. 打开游戏启动文件 `python game.py`
+
+# 包依赖
+
+```shell
+pip install rich   # 渲染终端输出
+pip install numpy 
+```
