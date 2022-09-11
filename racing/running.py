@@ -7,7 +7,7 @@ from .competitor import metal_symbol
 
 class Running(ProgressBar):
     
-    def __init__(self, competitor, space='_', width=80, desc="起跑线"):
+    def __init__(self, competitor, space='_', width=60, desc="起跑线"):
         """
         competitor : 参赛选手
         width : 进度条宽度

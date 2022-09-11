@@ -8,8 +8,8 @@
 # 用法
 
 1. 下载**整个**Packages库
-2. 在根目录下打开Terminal终端
-3. 打开游戏启动文件 `python game.py`
+2. 在根目录下打开Terminal终端(建议全屏，进度条刷新可能出错)
+3. 打开游戏启动文件 `python game`
 
 # 包依赖
 
