@@ -38,12 +38,12 @@ class Game:
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("五局三胜")
         table.add_column("田忌", justify="right")
-        table.add_column("齐王", justify="left")
+        table.add_column("齐王", justify="right")
         for i, (tian_id, king_id) in enumerate(zip(sorted_tian, sorted_king)):
             table.add_row(
                 f"{i+1}", 
                 f"{tian_id}: {pool[tian_id].symbol} {pool[tian_id].speed:.1f}",
-                f"{pool[king_id].speed:.1f} {pool[king_id].symbol} :{king_id}"
+                f"{king_id}: {pool[king_id].symbol} {pool[king_id].speed:.1f}"
                 )
         console.print(table)
         if output:
@@ -83,7 +83,7 @@ class Game:
         sorted_king_symbol = [self.competitor_pool[king_id].symbol for king_id in sorted_king]
         rich.print(f'普通模式: 齐王将依次出场 {" >> ".join(sorted_king_symbol)}') 
         while True:
-            input_str = input('请田忌选择出场顺序[ 0.随机, 1.顺序, 2.逆序, 3.空格分隔自排序 ]: ')
+            input_str = input('请田忌选择出场顺序[ 0.随机, 1.顺序, 2.逆序, 3.自排序(空格分隔) ]: ')
             input_str = '0' if input_str.strip() == '' else input_str.strip()
             if input_str == '0':
                 random_tian = sorted_tian.copy()
